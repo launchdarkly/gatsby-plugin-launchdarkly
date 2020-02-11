@@ -27,7 +27,7 @@ module.exports = {
 This plugin uses [LaunchDarkly's client-side JavaScript SDK](https://docs.launchdarkly.com/docs/js-sdk-reference).
 The SDK requires a **client-side ID** which you can retreive from your 
 [LaunchDarkly Project settings page](https://app.launchdarkly.com/settings/projects). This **client-side ID**
-needs to be stored in an [Gatsby environment variable](https://www.gatsbyjs.org/docs/environment-variables/).
+needs to be stored in a [Gatsby environment variable](https://www.gatsbyjs.org/docs/environment-variables/).
 In your `.env.development` or `.env.production` add the following environment variables:
 
 ```
