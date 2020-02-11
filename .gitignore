@@ -1,0 +1,5 @@
+node_modules
+yarn.errors
+package.lock
+.DS_Store
+Thumbs.db
