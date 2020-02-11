@@ -39,9 +39,7 @@ const LDProviderListener = ({ children, ldclient }) => {
     })
   }, [ldclient])
 
-  const variation = (key, dflt) => {
-    return flagsState[key] || dflt
-  }
+  const variation = ldclient.variation
 
   return (
     <LaunchDarklyContext.Provider

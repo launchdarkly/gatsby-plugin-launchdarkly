@@ -7,8 +7,8 @@
     "lint": "eslint **/*.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "LaunchDarkly <integrations@launchdarkly.com>",
+  "license": "Apache-2.0",
   "dependencies": {
     "eslint-plugin-react-hooks": "2.3.0",
     "launchdarkly-js-client-sdk": "^2.16.3"
