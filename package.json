@@ -1,16 +1,30 @@
 {
   "name": "gatsby-plugin-launchdarkly",
-  "version": "0.1.3",
-  "description": "",
+  "version": "0.1.4",
+  "description": "A simple plugin that integrates LaunchDarkly into your Gatsby site. This will allow you to use feature flags to rollout new features on your site.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.js"
   },
-  "keywords": [],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "launchdarkly",
+    "feature flag",
+    "feature toggle"
+  ],
+  "homepage": "https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly#readme",
   "author": "LaunchDarkly <integrations@launchdarkly.com>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly/issues"
+  },
   "dependencies": {
-    "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "launchdarkly-js-client-sdk": "^2.16.3"
   },
   "peerDependencies": {
