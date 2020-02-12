@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import * as LDClient from 'launchdarkly-js-client-sdk'
 import { LaunchDarklyContext } from './index'
@@ -22,21 +22,11 @@ LDRootProvider.propTypes = {
 }
 
 const LDProviderListener = ({ children, ldclient }) => {
-  let flags = useRef({})
-  const [flagsState, setFlags] = useState(flags.current)
+  const [flagsState, setFlags] = useState({})
 
   useEffect(() => {
-    ldclient.on('ready', () => {
-      flags.current = ldclient.allFlags()
-      setFlags(flags.current)
-    })
-    ldclient.on('change', newFlags => {
-      Object.keys(newFlags).map(async flag => {
-        const newVariation = await ldclient.variation(flag, flags.current[flag])
-        flags.current = { ...flags.current, [flag]: newVariation }
-        setFlags(flags.current)
-      })
-    })
+    ldclient.on('ready', () => setFlags(ldclient.allFlags()))
+    ldclient.on('change', () => setFlags(ldclient.allFlags()))
   }, [ldclient])
 
   const variation = (key, dflt) => {
