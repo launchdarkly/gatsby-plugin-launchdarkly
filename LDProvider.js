@@ -3,15 +3,32 @@ import PropTypes from 'prop-types'
 import * as LDClient from 'launchdarkly-js-client-sdk'
 import { LaunchDarklyContext } from './index'
 
+// eslint-disable-next-line no-undef
+if (!process.env.LD_CLIENT_ID) {
+  console.warn(
+    'LD_CLIENT_ID is not configured. See https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly#installation'
+  )
+}
+
+let ldOpts = {}
+try {
+  // eslint-disable-next-line no-undef
+  ldOpts = JSON.parse(process.env.LD_CLIENT_OPTIONS)
+  // eslint-disable-next-line no-empty
+} catch (err) {
+  console.warn(
+    'LD_CLIENT_OPTIONS is not a proper JSON string. Bypassing options config.'
+  )
+}
+
 const LDRootProvider = ({ children }) => {
   const ldclient = LDClient.initialize(
     // eslint-disable-next-line no-undef
-    process.env.LD_CLIENT_ID,
+    process.env.LD_CLIENT_ID || '',
     {
       anonymous: true
     },
-    // eslint-disable-next-line no-undef
-    JSON.parse(process.env.LD_CLIENT_OPTIONS)
+    ldOpts
   )
 
   return <LDProviderListener ldclient={ldclient}>{children}</LDProviderListener>
