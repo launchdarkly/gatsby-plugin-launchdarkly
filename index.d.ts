@@ -38,7 +38,7 @@ declare module 'gatsby-plugin-launchdarkly' {
   export const LaunchDarklyContext: React.Context<LaunchDarklyContextDefaults>
 }
 
-type flagValue = string | number | boolean | object
+type flagValue = string | number | boolean | object | null | undefined
 
 interface LaunchDarklyContextDefaults {
   /**
