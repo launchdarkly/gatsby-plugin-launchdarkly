@@ -3,3 +3,4 @@ yarn.errors
 package.lock
 .DS_Store
 Thumbs.db
+.idea
