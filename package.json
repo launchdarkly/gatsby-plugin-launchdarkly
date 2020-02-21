@@ -25,14 +25,15 @@
     "url": "https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly/issues"
   },
   "dependencies": {
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "launchdarkly-js-client-sdk": "^2.16.3"
+    "launchdarkly-react-client-sdk": "^2.18.0"
   },
   "peerDependencies": {
     "react": "^16.12.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.18.3"
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.4.0",
+    "prop-types": "^15.7.2"
   }
 }
