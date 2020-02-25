@@ -1,7 +1,7 @@
-import React from 'react'
+import {
+  useFlags,
+  useLDClient,
+  withLDConsumer
+} from 'launchdarkly-react-client-sdk'
 
-export const LaunchDarklyContext = React.createContext({
-  flags: {},
-  variation: () => false,
-  ldclient: {}
-})
+export { useFlags, useLDClient, withLDConsumer }
