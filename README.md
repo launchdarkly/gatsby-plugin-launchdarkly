@@ -15,23 +15,6 @@ npm install gatsby-plugin-launchdarkly
 Then in your `gatsby-config.js`:
 
 ```js
-module.exports = {
-  plugins: [
-    ...
-    'gatsby-plugin-launchdarkly',
-    ...
-  ],
-}
-```
-
-This plugin uses [LaunchDarkly's React
-SDK](https://docs.launchdarkly.com/sdk/client-side/react). The SDK requires a
-**client-side ID** which you can retreive from your [LaunchDarkly Project
-settings page](https://app.launchdarkly.com/settings/projects). This
-**client-side ID** needs to be stored in your
-[gatsby-config.js](https://www.gatsbyjs.org/docs/api-files-gatsby-config/).
-
-```js
 // gatsby-config.js
 ...
   plugins: [
@@ -50,6 +33,13 @@ settings page](https://app.launchdarkly.com/settings/projects). This
   ]
 ...
 ```
+
+This plugin uses [LaunchDarkly's React
+SDK](https://docs.launchdarkly.com/sdk/client-side/react). The SDK requires a
+**client-side ID** which you can retreive from your [LaunchDarkly Project
+settings page](https://app.launchdarkly.com/settings/projects). This
+**client-side ID** needs to be stored in your
+[gatsby-config.js](https://www.gatsbyjs.org/docs/api-files-gatsby-config/).
 
 Behind the scenes, this plugin will use `withLDProvider` to initialize the
 client. Read the doc on
