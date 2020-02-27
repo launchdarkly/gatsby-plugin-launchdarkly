@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-launchdarkly",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A simple plugin that integrates LaunchDarkly into your Gatsby site. This will allow you to use feature flags to rollout new features on your site.",
   "main": "index.js",
   "scripts": {

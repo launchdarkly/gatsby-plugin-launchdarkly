@@ -24,23 +24,40 @@ module.exports = {
 }
 ```
 
-This plugin uses [LaunchDarkly's client-side JavaScript
-SDK](https://docs.launchdarkly.com/docs/js-sdk-reference). The SDK requires a
+This plugin uses [LaunchDarkly's React
+SDK](https://docs.launchdarkly.com/sdk/client-side/react). The SDK requires a
 **client-side ID** which you can retreive from your [LaunchDarkly Project
 settings page](https://app.launchdarkly.com/settings/projects). This
-**client-side ID** needs to be stored in a [Gatsby environment
-variable](https://www.gatsbyjs.org/docs/environment-variables/). In your
-`.env.development` or `.env.production` add the following environment variables:
+**client-side ID** needs to be stored in your
+[gatsby-config.js](https://www.gatsbyjs.org/docs/api-files-gatsby-config/).
 
-```bash
-LD_CLIENT_ID=<Your LaunchDarkly Client-Side ID>
-LD_CLIENT_OPTIONS=<Additional SDK options>  # For example: {"bootstrap": "localstorage"}
+```js
+// gatsby-config.js
+...
+  plugins: [
+    ...
+    {
+      resolve: 'gatsby-plugin-launchdarkly',
+      options: {
+        clientSideID: '<your-launchdarkly-project-client-side-id>',
+        options: {
+          // any LaunchDarkly options you may want to implement
+          bootstrap: 'localstorage', // caches flag values in localstorage
+        },
+      },
+    },
+    ...
+  ]
+...
 ```
 
-The `LD_CLIENT_OPTIONS` variable is for [additional SDK
-options](https://docs.launchdarkly.com/docs/js-sdk-reference#section-customizing-your-client).
-You can omit this variable if you don't have additional options to supply. This
-value should be a stringified JSON object.
+Behind the scenes, this plugin will use `withLDProvider` to initialize the
+client. Read the doc on
+`[withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react#withldprovider)
+to understand other configuration options you can provide. As for the client
+options (i.e., `options` property), check out the documentation for [how to
+customize your LaunchDarkly
+client](https://docs.launchdarkly.com/sdk/client-side/javascript#customizing-your-client).
 
 ## Basic usage
 
