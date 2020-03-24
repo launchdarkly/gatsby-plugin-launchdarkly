@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true,
     },
     "extends": [
         "eslint:recommended",
@@ -9,7 +10,8 @@ module.exports = {
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "jest/globals": true,
+        "SharedArrayBuffer": "readonly",
     },
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,8 +21,9 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
+        "jest",
         "react",
-        "react-hooks"
+        "react-hooks",
     ],
     "rules": {
         "react-hooks/rules-of-hooks": "error",

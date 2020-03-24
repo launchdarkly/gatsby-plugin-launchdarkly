@@ -43,7 +43,7 @@ settings page](https://app.launchdarkly.com/settings/projects). This
 
 Behind the scenes, this plugin will use `withLDProvider` to initialize the
 client. Read the doc on
-`[withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react#withldprovider)
+[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react#withldprovider)
 to understand other configuration options you can provide. As for the client
 options (i.e., `options` property), check out the documentation for [how to
 customize your LaunchDarkly
@@ -177,5 +177,5 @@ here](https://docs.launchdarkly.com/docs/js-sdk-reference#section-changing-the-u
 
 ## Contributing
 
-This plugin is maintained by LaunchDarkly, but is not currently supported.
-Please feel free to fork and send PRs our way.
+This plugin is maintained and supported by LaunchDarkly. Please feel free to
+fork and send PRs our way.
