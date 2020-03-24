@@ -53,7 +53,7 @@ client](https://docs.launchdarkly.com/sdk/client-side/javascript#customizing-you
 
 In order to use a LaunchDarkly feature flag in your component, you'll need to
 first import the `LaunchDarklyContext`. This plugin makes use of [React
-Contex](https://reactjs.org/docs/context.html) to make the LaunchDarkly SDK
+Context](https://reactjs.org/docs/context.html) to make the LaunchDarkly SDK
 available to your Gatbsy components.
 
 ```js
