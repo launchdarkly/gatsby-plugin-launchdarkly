@@ -5,7 +5,7 @@ import { withLDProvider } from 'launchdarkly-react-client-sdk'
 export const wrapRootElement = ({ element }, pluginOptions) => {
   if (!pluginOptions.clientSideID) {
     console.warn(
-      '`clientSideID` is not configured. See https://github.com/launchdarkly-labs/gatsby-plugin-launchdarkly#installation'
+      '`clientSideID` is not configured. See https://github.com/launchdarkly/gatsby-plugin-launchdarkly#installation'
     )
   }
   const App = () => <>{element}</>
