@@ -1,0 +1,6 @@
+template:
+  name: npm
+
+publications:
+  - url: https://www.npmjs.com/package/gatsby-plugin-launchdarkly
+    description: npm
