@@ -137,7 +137,7 @@ class component.
 
 This plugin assumes that the user viewing your site is anonymous -- likely the
 case for most Gatsby sites. In this case, the LaunchDarkly SDK will uniquely
-track your a client so it remembers what variation of the flag was served to it.
+track your user so it remembers what variation of the flag was served to them.
 This is transparent and you don't need to do anything else to make it work this
 way.
 
