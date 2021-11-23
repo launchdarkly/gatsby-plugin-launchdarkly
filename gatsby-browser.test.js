@@ -1,5 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
+import { LDProvider } from 'launchdarkly-react-client-sdk'
+
 
 import { wrapRootElement } from './gatsby-browser'
 
@@ -9,8 +11,9 @@ describe('LaunchDarkly gets injected in by wrapRootElement', () => {
       { element: <></> },
       { clientSideID: 'dummyid' }
     )
-    const tree = renderer.create(WrappedTestComponent).toTree()
-    expect(tree.instance.state).toHaveProperty('flags', {})
-    expect(tree.instance.state).toHaveProperty('ldClient')
+    const wrapped = renderer.create(WrappedTestComponent) 
+    const instance = wrapped.root.findByType(LDProvider).instance
+    expect(instance.state).toHaveProperty('flags', {})
+    expect(instance.state).toHaveProperty('ldClient')
   })
 })
