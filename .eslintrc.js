@@ -22,6 +22,7 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
+        'import',
         'jest',
         'react',
         'react-hooks',
