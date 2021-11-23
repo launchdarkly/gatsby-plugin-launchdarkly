@@ -29,6 +29,7 @@
     "launchdarkly-react-client-sdk": "^2.18.0"
   },
   "peerDependencies": {
+    "gatsby": "^3.0.0 || ^4.0.0",
     "react": "^16.12.0"
   },
   "devDependencies": {
