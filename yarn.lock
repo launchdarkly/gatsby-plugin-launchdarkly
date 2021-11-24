@@ -3254,7 +3254,7 @@ launchdarkly-js-sdk-common@3.3.2:
     fast-deep-equal "^2.0.1"
     uuid "^3.3.2"
 
-launchdarkly-react-client-sdk@2.23.3:
+launchdarkly-react-client-sdk@^2.23.3:
   version "2.23.3"
   resolved "https://registry.yarnpkg.com/launchdarkly-react-client-sdk/-/launchdarkly-react-client-sdk-2.23.3.tgz#2088e9abb3435894cad0682dfb4ff27e574183c6"
   integrity sha512-ovsoPjTKk6KtLLp3PnUtBjizcjAEZ+qiMANC6PqZ5ms8ZeqMIyb6RVk5UeyOq2qtasiQCFLM7OgGPf1QQgbaAg==
