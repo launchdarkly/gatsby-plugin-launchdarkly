@@ -35,7 +35,7 @@ Then in your `gatsby-config.js`:
 ```
 
 This plugin uses [LaunchDarkly's React
-SDK](https://docs.launchdarkly.com/sdk/client-side/react). The SDK requires a
+SDK](https://docs.launchdarkly.com/sdk/client-side/react/react-web). The SDK requires a
 **client-side ID** which you can retreive from your [LaunchDarkly Project
 settings page](https://app.launchdarkly.com/settings/projects). This
 **client-side ID** needs to be stored in your
@@ -43,11 +43,11 @@ settings page](https://app.launchdarkly.com/settings/projects). This
 
 Behind the scenes, this plugin will use `withLDProvider` to initialize the
 client. Read the doc on
-[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react#withldprovider)
+[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#withldprovider)
 to understand other configuration options you can provide. As for the client
 options (i.e., `options` property), check out the documentation for [how to
 customize your LaunchDarkly
-client](https://docs.launchdarkly.com/sdk/client-side/javascript#customizing-your-client).
+client](https://docs.launchdarkly.com/sdk/features/config#javascript).
 
 ## Basic usage
 
@@ -83,7 +83,7 @@ const Header = ({ siteTitle }) => {
 snake-case.*
 
 In addition to the `useFlags` hook, there's also the
-[`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react#hooks) hook
+[`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#hooks) hook
 which gives you direct access to the LaunchDarkly client.
 
 ```jsx
@@ -144,7 +144,7 @@ way.
 However, there might be a case where you actually have a logged in user (not an
 anonymous user) and you may want to let LaunchDarkly know that in case you may
 want to target that user for a feature. In this case, you'll want to access the
-`ldclient` object directly:
+`LDClient` object directly:
 
 ```jsx
 import React from 'react';
@@ -173,12 +173,11 @@ export default HooksDemo;
 ```
 
 More information about [changing the user context can be found
-here](https://docs.launchdarkly.com/docs/js-sdk-reference#section-changing-the-user-context).
+here](https://docs.launchdarkly.com/sdk/features/identify#javascript)
 
 ## Contributing
 
-This plugin is maintained and supported by LaunchDarkly. Please feel free to
-fork and send PRs our way.
+We encourage pull requests and other contributions from the community. Check out our [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute to this plugin.
 
 ## About LaunchDarkly
 
