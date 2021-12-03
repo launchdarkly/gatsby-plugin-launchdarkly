@@ -2,7 +2,7 @@
 
 All notable changes to the LaunchDarkly Gatsby plugin will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
-## Next version
+## 1.0.0
 
 - Update dependencies
 - Support for Gatsby 4
