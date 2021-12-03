@@ -35,7 +35,7 @@ Then in your `gatsby-config.js`:
 ```
 
 This plugin uses [LaunchDarkly's React
-SDK](https://docs.launchdarkly.com/sdk/client-side/react). The SDK requires a
+SDK](https://docs.launchdarkly.com/sdk/client-side/react/react-web). The SDK requires a
 **client-side ID** which you can retreive from your [LaunchDarkly Project
 settings page](https://app.launchdarkly.com/settings/projects). This
 **client-side ID** needs to be stored in your
@@ -43,11 +43,11 @@ settings page](https://app.launchdarkly.com/settings/projects). This
 
 Behind the scenes, this plugin will use `withLDProvider` to initialize the
 client. Read the doc on
-[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react#withldprovider)
+[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#withldprovider)
 to understand other configuration options you can provide. As for the client
 options (i.e., `options` property), check out the documentation for [how to
 customize your LaunchDarkly
-client](https://docs.launchdarkly.com/sdk/client-side/javascript#customizing-your-client).
+client](https://docs.launchdarkly.com/sdk/features/config#javascript).
 
 ## Basic usage
 
@@ -83,7 +83,7 @@ const Header = ({ siteTitle }) => {
 snake-case.*
 
 In addition to the `useFlags` hook, there's also the
-[`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react#hooks) hook
+[`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#hooks) hook
 which gives you direct access to the LaunchDarkly client.
 
 ```jsx
@@ -144,7 +144,7 @@ way.
 However, there might be a case where you actually have a logged in user (not an
 anonymous user) and you may want to let LaunchDarkly know that in case you may
 want to target that user for a feature. In this case, you'll want to access the
-`ldclient` object directly:
+`LDClient` object directly:
 
 ```jsx
 import React from 'react';
@@ -173,9 +173,23 @@ export default HooksDemo;
 ```
 
 More information about [changing the user context can be found
-here](https://docs.launchdarkly.com/docs/js-sdk-reference#section-changing-the-user-context).
+here](https://docs.launchdarkly.com/sdk/features/identify#javascript)
 
 ## Contributing
 
-This plugin is maintained and supported by LaunchDarkly. Please feel free to
-fork and send PRs our way.
+We encourage pull requests and other contributions from the community. Check out our [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute to this plugin.
+
+## About LaunchDarkly
+
+* LaunchDarkly is a continuous delivery platform that provides feature flags as a service and allows developers to iterate quickly and safely. We allow you to easily flag your features and manage them from the LaunchDarkly dashboard.  With LaunchDarkly, you can:
+    * Roll out a new feature to a subset of your users (like a group of users who opt-in to a beta tester group), gathering feedback and bug reports from real-world use cases.
+    * Gradually roll out a feature to an increasing percentage of users, and track the effect that the feature has on key metrics (for instance, how likely is a user to complete a purchase if they have feature A versus feature B?).
+    * Turn off a feature that you realize is causing performance problems in production, without needing to re-deploy, or even restart the application with a changed configuration file.
+    * Grant access to certain features based on user attributes, like payment plan (eg: users on the ‘gold’ plan get access to more features than users in the ‘silver’ plan). Disable parts of your application to facilitate maintenance, without taking everything offline.
+* LaunchDarkly provides feature flag SDKs for a wide variety of languages and technologies. Read [our documentation](https://docs.launchdarkly.com/sdk) for a complete list.
+* Explore LaunchDarkly
+    * [launchdarkly.com](https://www.launchdarkly.com/ "LaunchDarkly Main Website") for more information
+    * [docs.launchdarkly.com](https://docs.launchdarkly.com/  "LaunchDarkly Documentation") for our documentation and SDK reference guides
+    * [apidocs.launchdarkly.com](https://apidocs.launchdarkly.com/  "LaunchDarkly API Documentation") for our API documentation
+    * [blog.launchdarkly.com](https://blog.launchdarkly.com/  "LaunchDarkly Blog Documentation") for the latest product updates
+
