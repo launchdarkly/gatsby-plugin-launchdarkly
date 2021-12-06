@@ -1,12 +1,18 @@
+version: 2
+
 repo:
   public: gatsby-plugin-launchdarkly
 
-template:
-  name: npm
+jobs:
+  - docker:
+      image: node:12-buster
+    template:
+      name: npm
 
 publications:
   - url: https://www.npmjs.com/package/gatsby-plugin-launchdarkly
     description: npm
 
 documentation:
-  githubPages: false
+  gitHubPages: false
+  title: LaunchDarkly Gatsby Plugin
