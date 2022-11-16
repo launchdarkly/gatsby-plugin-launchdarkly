@@ -11,3 +11,7 @@ All notable changes to the LaunchDarkly Gatsby plugin will be documented in this
 ## [0.4.0] - 2022-11-16
 ### Changed:
 - Bumps [launchdarkly-react-client-sdk](https://github.com/launchdarkly/react-client-sdk) from 2.23.3 to 2.29.2.
+
+## [0.4.0] - 2022-11-16
+### Changed:
+- Bumps [launchdarkly-react-client-sdk](https://github.com/launchdarkly/react-client-sdk) from 2.23.3 to 2.29.2.
