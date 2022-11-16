@@ -26,7 +26,7 @@
     "url": "https://github.com/launchdarkly/gatsby-plugin-launchdarkly/issues"
   },
   "dependencies": {
-    "launchdarkly-react-client-sdk": "^2.23.3"
+    "launchdarkly-react-client-sdk": "^2.29.2"
   },
   "peerDependencies": {
     "gatsby": "^3.0.0 || ^4.0.0",
