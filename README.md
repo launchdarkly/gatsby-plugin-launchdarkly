@@ -94,7 +94,7 @@ const HooksDemo = () => {
   const { someNewFeature } = useFlags();
   const ldClient = useLDClient();
 
-  const onLoginSuccessful = () => ldClient.identify({ key: 'aa0ceb' });
+  const onLoginSuccessful = () => ldClient.identify({ kind: 'user', key: 'aa0ceb' });
 
   return (
     <div>{someNewFeature ? 'Flag on' : 'Flag off'}</div>
@@ -158,6 +158,7 @@ const HooksDemo = () => {
   // user that's logged in. Changes in flag values will stream in and could
   // cause your component to re-render.
   const onLoginSuccessful = (user) => ldClient.identify({
+    kind: 'user',
     key: user.id,
     firstName: user.firstName,
     lastName: user.lastName,
