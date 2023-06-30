@@ -11,8 +11,9 @@ describe('LaunchDarkly gets injected in by wrapRootElement', () => {
       { element: <></> },
       { clientSideID: 'dummyid' }
     )
-    const wrapped = renderer.create(WrappedTestComponent) 
+    const wrapped = renderer.create(WrappedTestComponent)
     const instance = wrapped.root.findByType(LDProvider).instance
+
     expect(instance.state).toHaveProperty('flags', {})
     expect(instance.state).toHaveProperty('ldClient')
   })

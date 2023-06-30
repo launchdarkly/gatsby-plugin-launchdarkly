@@ -5,7 +5,7 @@ repo:
 
 jobs:
   - docker:
-      image: node:12-buster
+      image: node:16.15.1-buster
     template:
       name: npm
 

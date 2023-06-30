@@ -36,24 +36,18 @@ Then in your `gatsby-config.js`:
 
 This plugin uses [LaunchDarkly's React
 SDK](https://docs.launchdarkly.com/sdk/client-side/react/react-web). The SDK requires a
-**client-side ID** which you can retreive from your [LaunchDarkly Project
+**client-side ID** which you can retrieve from your [LaunchDarkly Project
 settings page](https://app.launchdarkly.com/settings/projects). This
 **client-side ID** needs to be stored in your
 [gatsby-config.js](https://www.gatsbyjs.org/docs/api-files-gatsby-config/).
 
-Behind the scenes, this plugin will use `withLDProvider` to initialize the
-client. Read the doc on
-[`withLDProvider`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#withldprovider)
-to understand other configuration options you can provide. As for the client
-options (i.e., `options` property), check out the documentation for [how to
-customize your LaunchDarkly
-client](https://docs.launchdarkly.com/sdk/features/config#javascript).
+Behind the scenes, this plugin uses the React SDK's `withLDProvider` function to initialize the client. Read the documentation on [`Initializing the React SDK`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#initializing-the-react-sdk) to understand other configuration options you can provide.
+
+To learn more about the configuration options available in the plugin's `options` property, read the documentation on [configuration in the JavaScript SDK](https://docs.launchdarkly.com/sdk/features/config#javascript).
 
 ## Basic usage
 
-In order to use a LaunchDarkly feature flag in your component, you'll need to
-first import the `LaunchDarklyContext`. This plugin makes use of [React
-Context](https://reactjs.org/docs/context.html) to make the LaunchDarkly SDK
+To use a LaunchDarkly feature flag in your component, first import the `LaunchDarklyContext`. This plugin uses [React Context](https://reactjs.org/docs/context.html) to make the LaunchDarkly SDK
 available to your Gatbsy components.
 
 ```js
@@ -82,9 +76,7 @@ const Header = ({ siteTitle }) => {
 *Note that the LaunchDarkly SDK will automatically convert flag names to
 snake-case.*
 
-In addition to the `useFlags` hook, there's also the
-[`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#hooks) hook
-which gives you direct access to the LaunchDarkly client.
+In addition to the `useFlags` hook, the [`useLDClient`](https://docs.launchdarkly.com/sdk/client-side/react/react-web#hooks) hook gives you direct access to the LaunchDarkly client:
 
 ```jsx
 import React from 'react';
@@ -94,7 +86,7 @@ const HooksDemo = () => {
   const { someNewFeature } = useFlags();
   const ldClient = useLDClient();
 
-  const onLoginSuccessful = () => ldClient.identify({ key: 'aa0ceb' });
+  const onLoginSuccessful = () => ldClient.identify({ kind: 'user', key: 'user-key-123abc' });
 
   return (
     <div>{someNewFeature ? 'Flag on' : 'Flag off'}</div>
@@ -135,16 +127,13 @@ class component.
 
 ## Advanced usage
 
-This plugin assumes that the user viewing your site is anonymous -- likely the
-case for most Gatsby sites. In this case, the LaunchDarkly SDK will uniquely
-track your user so it remembers what variation of the flag was served to them.
+This plugin assumes that the end user viewing your site is anonymous, which is likely the
+case for most Gatsby sites. In this situation, the LaunchDarkly SDK uniquely
+tracks each end user and remembers what variation of each flag was served to them.
 This is transparent and you don't need to do anything else to make it work this
 way.
 
-However, there might be a case where you actually have a logged in user (not an
-anonymous user) and you may want to let LaunchDarkly know that in case you may
-want to target that user for a feature. In this case, you'll want to access the
-`LDClient` object directly:
+If you have a logged-in end user, and can identify that end user to LaunchDarkly and then target that end user for a feature. To do this, access the `LDClient` object directly:
 
 ```jsx
 import React from 'react';
@@ -154,10 +143,11 @@ const HooksDemo = () => {
   const { someNewFeature } = useFlags();
   const ldClient = useLDClient();
 
-  // Calling `identify` will cause the flags to be re-evaluated for the new
-  // user that's logged in. Changes in flag values will stream in and could
-  // cause your component to re-render.
+  // Calling `identify` will cause the flags to be re-evaluated for the
+  // new end user that's logged in. Changes in flag values will stream in and
+  // could cause your component to re-render.
   const onLoginSuccessful = (user) => ldClient.identify({
+    kind: 'user',
     key: user.id,
     firstName: user.firstName,
     lastName: user.lastName,
@@ -172,8 +162,7 @@ const HooksDemo = () => {
 export default HooksDemo;
 ```
 
-More information about [changing the user context can be found
-here](https://docs.launchdarkly.com/sdk/features/identify#javascript)
+To learn more about changing the user context, read the [`identify` documentation for the JavaScript SDK](https://docs.launchdarkly.com/sdk/features/identify#javascript).
 
 ## Contributing
 
