@@ -1,7 +1,8 @@
 import {
+  asyncWithLDProvider,
   useFlags,
   useLDClient,
-  withLDConsumer
+  withLDConsumer,
 } from 'launchdarkly-react-client-sdk'
 
-export { useFlags, useLDClient, withLDConsumer }
+export { asyncWithLDProvider, useFlags, useLDClient, withLDConsumer }
